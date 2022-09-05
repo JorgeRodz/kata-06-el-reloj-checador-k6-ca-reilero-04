@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_02_210831) do
+ActiveRecord::Schema.define(version: 2022_09_05_214301) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_buffercache"
-  enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
@@ -29,13 +27,14 @@ ActiveRecord::Schema.define(version: 2022_09_02_210831) do
   create_table "employees", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "email"
     t.string "position"
     t.integer "private_number"
     t.boolean "working"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
     t.integer "employee_number"
+    t.integer "store_id"
   end
 
   create_table "stores", force: :cascade do |t|
