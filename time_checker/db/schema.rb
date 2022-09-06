@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_09_06_001324) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer "employee_id"
-    t.datetime "check_in", default: "2022-09-05 23:38:58"
+    t.datetime "check_in"
     t.datetime "check_out"
     t.integer "store_id"
   end
