@@ -1,6 +1,7 @@
 class Employee < ApplicationRecord
 
   belongs_to :store
+  has_many :attendances
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
