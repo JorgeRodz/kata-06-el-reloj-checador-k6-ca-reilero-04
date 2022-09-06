@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_05_232655) do
+ActiveRecord::Schema.define(version: 2022_09_06_001324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_buffercache"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2022_09_05_232655) do
     t.integer "employee_id"
     t.datetime "check_in", default: "2022-09-05 23:38:58"
     t.datetime "check_out"
+    t.integer "store_id"
   end
 
   create_table "employees", force: :cascade do |t|
