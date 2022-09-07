@@ -1,0 +1,17 @@
+<h1>Stores new form</h1>
+
+<%= form_with scope: :store, url: stores_path, local: true do |f| %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :address %><br/>
+    <%= f.text_area :address %>
+  </p>
+
+  <p>
+    <%= f.submit "Create new store" %>
+  </p>
+<% end %>
