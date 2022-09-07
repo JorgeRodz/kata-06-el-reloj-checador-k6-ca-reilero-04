@@ -1,0 +1,28 @@
+<h1>Employee Index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Position</th>
+      <th>Private number</th>
+      <th>Working</th>
+      <th>Store Id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @employees.each do |employee| %>
+        <td><%= employee.first_name %></td>
+        <td><%= employee.last_name %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.position %></td>
+        <td><%= employee.private_number %></td>
+        <td><%= employee.working %></td>
+        <td><%= employee.store_id %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
