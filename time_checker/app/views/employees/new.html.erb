@@ -1,0 +1,37 @@
+<h1>Employees new form</h1>
+
+<%= form_with scope: :employee, url: employees_path, local: true do |f| %>
+  <p>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br/>
+    <%= f.email_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :position %><br/>
+    <%= f.text_field :position %>
+  </p>
+
+  <p>
+    <%= f.label :working %><br/>
+    <%= f.select :working, ["true", "false"] %>
+  </p>
+
+  <p>
+    <%= f.label :store_id %><br/>
+    <%= f.number_field :store_id %>
+  </p>
+
+  <p>
+    <%= f.submit "Create new employee" %>
+  </p>
+<% end %>
