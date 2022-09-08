@@ -1,4 +1,4 @@
-<h1>Attendance number: <%=@attendance.id %></h1>
+<h1>Attendance ID: <%=@attendance.id %></h1>
 
 <%= form_with scope: :attendance, url: attendances_path, local: true do |f| %>
 
@@ -12,7 +12,7 @@
   </p>
 
   <p>
-    <%= f.submit "Create new attendance" %>
+    <%= f.submit "Check out" %>
   </p>
 
 <% end %>
