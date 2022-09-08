@@ -1,0 +1,22 @@
+<h1>Store Index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>Check-in</th>
+      <th>Check-out</th>
+      <th>Store ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @attendances.each do |attendance| %>
+        <td><%= attendance.employee_id %></td>
+        <td><%= attendance.check_in %></td>
+        <td><%= attendance.check_out %></td>
+        <td><%= attendance.store_id %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

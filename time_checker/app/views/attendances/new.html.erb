@@ -1,0 +1,18 @@
+<h1>Attendance number: <%=@attendance.id %></h1>
+
+<%= form_with scope: :attendance, url: attendances_path, local: true do |f| %>
+
+  <p>
+    <%= f.label :employee_id %><br/>
+    <%= f.number_field :employe_id %>
+  </p>
+  <p>
+    <%= f.label :private_number %><br/>
+    <%= f.number_field :private_number %>
+  </p>
+
+  <p>
+    <%= f.submit "Create new attendance" %>
+  </p>
+
+<% end %>
