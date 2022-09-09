@@ -1,3 +1,35 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// --------------- Pages --------------
+// ----- home -----
+.home_main {
+  flex-grow: 1;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    border: 1px solid #cdd4da;
+    border-radius: 15px;
+    padding: 30px 20px;
+    background-color: #d2d2d2;
+
+    .label {
+      font-weight: bold;
+    }
+
+    .custom_check {
+      font-weight: 200;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+// ----- Digital-clock -----

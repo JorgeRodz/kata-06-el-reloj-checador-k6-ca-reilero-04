@@ -1,5 +1,14 @@
 <h1>Stores new form</h1>
 
+<% if @store.errors.any? %>
+  <h2>The following errors preventing articles to being saved</h2>
+  <ul>
+    <% @store.errors.full_messages.each do |msg| %>
+      <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with scope: :store, url: stores_path, local: true do |f| %>
   <p>
     <%= f.label :name %><br/>

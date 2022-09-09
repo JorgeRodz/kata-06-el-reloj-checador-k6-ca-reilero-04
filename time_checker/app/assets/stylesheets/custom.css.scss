@@ -1,0 +1,32 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// --------------- application.html.erb --------------
+// ----- navbar -----
+.custom_margin {
+  margin-right: 13px;
+}
+.nav_h1 {
+  color: #e5e5d5;
+}
+
+// ----- footer -----
+.application_footer {
+  background-color: #212529;
+  color: #e5e5d5;
+  padding: 20px;
+  text-align: center;
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0;
+  }
+}

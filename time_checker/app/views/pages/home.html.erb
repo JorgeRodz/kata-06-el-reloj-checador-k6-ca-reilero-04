@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<main class="home_main">
+  <%= form_with scope: :attendance, url: attendances_path, local: true do |f| %>
+    <div class="mb-4 label">
+      <%= f.label :employee_id, '# Employee id', class: 'form-label' %><br/>
+      <%= f.number_field :employe_id, class: 'form-control' %>
+    </div>
+
+    <div class="mb-4 label">
+      <%= f.label :private_number, '# Private number' ,class: 'form-label' %><br/>
+      <%= f.password_field :private_number, class: 'form-control' %>
+    </div>
+
+    <div class="buttons">
+      <%= f.submit "Check-in", class: 'btn btn-primary' %><%= f.submit "Check-out", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</main>

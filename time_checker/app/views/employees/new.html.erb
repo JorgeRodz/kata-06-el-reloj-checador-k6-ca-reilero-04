@@ -1,5 +1,14 @@
 <h1>Employees new form</h1>
 
+<% if @employee.errors.any? %>
+  <h2>The following errors preventing articles to being saved</h2>
+  <ul>
+    <% @employee.errors.full_messages.each do |msg| %>
+      <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with scope: :employee, url: employees_path, local: true do |f| %>
   <p>
     <%= f.label :first_name %><br/>

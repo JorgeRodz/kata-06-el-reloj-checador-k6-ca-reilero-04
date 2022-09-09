@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Name</th>
       <th>Address</th>
     </tr>
@@ -10,6 +11,7 @@
   <tbody>
     <tr>
       <% @stores.each do |store| %>
+        <td><%= store.id %></td>
         <td><%= store.name %></td>
         <td><%= store.address %></td>
     </tr>
