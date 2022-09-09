@@ -1,4 +1,12 @@
-<h1>Stores show store</h1>
+<div class="m-5">
+    <%# <a name="" id="" class="btn btn-primary" href="#" role="button">Atras</a> %>
+    <h1>Stores show store</h1>
 
-<p>Name: <%= @store.name %></p>
-<p>Addres: <%= @store.address %></p>
+    <div class="card mt-5 p-1" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title mb-3">Store ID: <%=@store.id %></h5>
+        <p>Name: <%= @store.name %></p>
+        <p>Addres: <%= @store.address %></p>
+    </div>
+    </div>
+</div>

@@ -1,6 +1,12 @@
-<h1>Attendance number: <%=@attendance.id %></h1>
-
-<p>Employee ID: <%= @attendance.employee_id %></p>
-<p>Check-in: <%= @attendance.check_in %></p>
-<p>Check-out: <%= @attendance.check_out %></p>
-<p>Store ID: <%= @attendance.store_id %></p>
+<div class="m-5">
+    <h1>Attendance show employees</h1>
+    <div class="card mt-5 p-1" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title mb-3">Attendance ID: <%=@attendance.id %></h5>
+            <p>Employee ID: <%= @attendance.employee_id %></p>
+            <p>Check-in: <%= @attendance.check_in %></p>
+            <p>Check-out: <%= @attendance.check_out %></p>
+            <p>Store ID: <%= @attendance.store_id %></p>
+        </div>
+    </div>
+</div>
