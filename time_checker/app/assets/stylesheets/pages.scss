@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+$base-duration: 500ms;
+
+// Colors
+$color-1: slategray;
+$color-2: #3498db;
+$color-3: #bfbfbf;
+
+// Breakpoints
+$sm: new-breakpoint(min-width 320px);
+$med: new-breakpoint(min-width 768px);
+$lg: new-breakpoint(min-width 1024px);
+
 // --------------- Pages --------------
 // ----- home -----
 .home_main {
@@ -12,6 +26,7 @@
   align-items: center;
 
   form {
+    align-self: start;
     border: 1px solid #cdd4da;
     border-radius: 15px;
     padding: 30px 20px;
@@ -33,3 +48,65 @@
 }
 
 // ----- Digital-clock -----
+
+.alarm-clock {
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #232323;
+
+  .date {
+    position: absolute;
+    font-weight: bold;
+    bottom: 15px;
+    left: 50%;
+    color: #80b5ff;
+    font-size: 12px;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    z-index: 9;
+
+    .month {
+      letter-spacing: 2px;
+    }
+  }
+
+  .time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    padding: 0px 45px 15px 40px;
+    background-color: #262626;
+    border-radius: 10px;
+
+    font-family: 'Orbitron', sans-serif;
+    //font-family: 'Menlo', monospace;
+    font-size: 52px;
+
+    span {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      //width: 85px;
+      color: $color-3;
+      text-shadow: 0 0 15px rgba($color-3, 0.4);
+      line-height: 1.75;
+
+      // background-color: white;
+      // border: 1px solid red;
+
+      &:nth-child(odd) {
+        width: 80px;
+      }
+
+      &.colon {
+        width: 12px;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,4 +1,7 @@
 <main class="home_main">
+
+  <%= render "pages/clock" %>
+
   <%= form_with scope: :attendance, url: attendances_path, local: true do |f| %>
     <div class="mb-4 label">
       <%= f.label :employee_id, '# Employee id', class: 'form-label' %><br/>
@@ -15,3 +18,5 @@
     </div>
   <% end %>
 </main>
+
+<%= javascript_pack_tag "home.js" %>
