@@ -1,4 +1,7 @@
 <h1 class="my-2">Store Index</h1>
+<p>
+  <%= link_to 'Add new stores', new_store_path, class: 'btn btn-primary' %>
+</p>
 
 <table class="table table-striped">
   <thead>
@@ -6,6 +9,7 @@
       <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Address</th>
+      <th coolspan=3>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +17,10 @@
       <% @stores.each do |store| %>
         <th scope="row"><%= store.id %></th>
         <td><%= store.name %></td>
-        <td><%= store.address %></td>>
+        <td><%= store.address %></td>
+        <td><%= link_to 'Show', store_path(store.id), class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_store_path(store.id), class: 'btn btn-success' %></td>
+        <td><%= link_to 'Delete', store_path(store), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
     </tr>
     <% end %>
   </tbody>
