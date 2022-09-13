@@ -13,8 +13,21 @@ class AttendancesController < ApplicationController
     end
 
     def create
-      @attendance = Attendance.new(params.require(:attendance).permit(:employee_id))
-      if @attendance.save
+
+      # puts "params: #{params}"
+
+      @attendance = Attendance.new(params.require(:attendance).permit(:employee_id,:store_id))
+
+      @employee = Employee.find(@attendance.employee_id)
+
+      # puts @employee.private_number
+      # puts params[:attendance][:private_number]
+
+      if @employee.private_number != params[:attendance][:private_number].to_i
+        render 'new'
+      elsif @employee.working == false
+        render 'new'
+      elsif @attendance.save
         redirect_to @attendance
       else
         render 'new'
