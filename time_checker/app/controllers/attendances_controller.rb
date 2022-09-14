@@ -28,7 +28,8 @@ class AttendancesController < ApplicationController
       elsif @employee.working == false
         render 'new'
       elsif @attendance.save
-        redirect_to @attendance
+        flash[:notice] = "Check-in register!"
+        redirect_to root_path
       else
         render 'new'
       end
