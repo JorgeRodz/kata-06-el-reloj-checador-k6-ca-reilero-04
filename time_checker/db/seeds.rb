@@ -22,12 +22,11 @@ end
   puts "Creating employee #{i}"
   first_name_variable = Faker::Name.first_name
   store_id_variable = rand(1..5)
-  Employee.create( first_name: first_name_variable,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.free_email(name: first_name_variable),
-    position: Faker::Job.title,
-    private_number: rand(1000..9999),
-    store_id: store_id_variable,
-    working: true
-  )
+  Employee.create(first_name: first_name_variable,
+                  last_name: Faker::Name.last_name,
+                  email: Faker::Internet.free_email(name: first_name_variable),
+                  position: Faker::Job.title,
+                  private_number: rand(1000..9999),
+                  store_id: store_id_variable,
+                  working: true)
 end

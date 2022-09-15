@@ -23,6 +23,7 @@ class StoresController < ApplicationController
   def edit
     @store = Store.find(params[:id])
   end
+
   def update
     @store = Store.find(params[:id])
     if @store.update(params.require(:store).permit(:name, :address))

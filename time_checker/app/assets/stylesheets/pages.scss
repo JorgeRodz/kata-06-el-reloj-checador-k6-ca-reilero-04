@@ -2,14 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@import "./variables/colors.scss";
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 
 $base-duration: 500ms;
-
-// Colors
-$color-1: slategray;
-$color-2: #3498db;
-$color-3: #bfbfbf;
 
 // Breakpoints
 $sm: new-breakpoint(min-width 320px);
@@ -21,16 +17,16 @@ $lg: new-breakpoint(min-width 1024px);
 .home_main {
   flex-grow: 1;
 
+  align-items: center;
   display: grid;
   justify-content: center;
-  align-items: center;
 
   form {
     align-self: start;
-    border: 1px solid #cdd4da;
+    background-color: $bg-color-1;
     border-radius: 15px;
+    border: 1px solid $border-color-1;
     padding: 30px 20px;
-    background-color: #d2d2d2;
 
     .label {
       font-weight: bold;
@@ -50,18 +46,18 @@ $lg: new-breakpoint(min-width 1024px);
 // ----- Digital-clock -----
 
 .alarm-clock {
-  position: relative;
-  padding: 10px;
+  background-color: $bg-color-2;
   border-radius: 10px;
-  background-color: #232323;
+  padding: 10px;
+  position: relative;
 
   .date {
-    position: absolute;
-    font-weight: bold;
     bottom: 15px;
-    left: 50%;
-    color: #80b5ff;
+    color: $color-4;
     font-size: 12px;
+    font-weight: bold;
+    left: 50%;
+    position: absolute;
     text-transform: uppercase;
     transform: translateX(-50%);
     z-index: 9;
@@ -72,40 +68,33 @@ $lg: new-breakpoint(min-width 1024px);
   }
 
   .time {
-    display: flex;
     align-items: center;
-    justify-content: center;
-
-    position: relative;
-    padding: 0px 45px 15px 40px;
-    background-color: #262626;
+    background-color: $bg-color-3;
     border-radius: 10px;
-
+    display: flex;
     font-family: 'Orbitron', sans-serif;
-    //font-family: 'Menlo', monospace;
     font-size: 52px;
+    justify-content: center;
+    padding: 0px 45px 15px 40px;
+    position: relative;
 
     span {
-      position: relative;
+      align-items: center;
+      color: $color-3;
       display: flex;
       flex-direction: row;
-      align-items: center;
       justify-content: center;
-      //width: 85px;
-      color: $color-3;
-      text-shadow: 0 0 15px rgba($color-3, 0.4);
       line-height: 1.75;
-
-      // background-color: white;
-      // border: 1px solid red;
+      position: relative;
+      text-shadow: 0 0 15px rgba($color-3, 0.4);
 
       &:nth-child(odd) {
         width: 80px;
       }
 
       &.colon {
-        width: 12px;
         text-align: center;
+        width: 12px;
       }
     }
   }
