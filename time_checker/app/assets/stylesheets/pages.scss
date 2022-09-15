@@ -2,16 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@import "./variables/colors.scss";
-@import url('https://fonts.googleapis.com/css?family=Orbitron');
+@import "./fonts.scss";
 
-$base-duration: 500ms;
-
-// Breakpoints
-$sm: new-breakpoint(min-width 320px);
-$med: new-breakpoint(min-width 768px);
-$lg: new-breakpoint(min-width 1024px);
-
+@import "./mixins";
 // --------------- Pages --------------
 // ----- home -----
 .home_main {
