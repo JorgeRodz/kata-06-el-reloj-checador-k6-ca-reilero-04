@@ -24,26 +24,6 @@ class AttendancesController < ApplicationController
     checkout if params[:commit] == 'Check-out'
   end
 
-  def edit
-    # @attendance = Attendance.find(params[:id])
-  end
-
-  def update
-    unless already_check_in
-      flash[:notice] = 'Your first need to check-in'
-      render 'pages/home'
-      nil
-    end
-    # flash[:notice] = "update was reach"
-    # redirect_to root_path
-    # render 'pages/home'
-  end
-
-  def destroy
-    # @store = Store.find(params[:id])
-    # @store.destroy
-  end
-
   private
 
   # --------------- helpers ---------------
@@ -68,7 +48,7 @@ class AttendancesController < ApplicationController
   def check_in
     flash[:notice] = employee_nil_or_wrong_private_number || check_in_already
     flash[:notice] = check_in_register if flash[:notice].nil?
-    render 'pages/home'
+    redirect_to root_path
   end
 
   def check_in_already
@@ -83,7 +63,7 @@ class AttendancesController < ApplicationController
   def checkout
     flash[:notice] = employee_nil_or_wrong_private_number || first_check_in_or_check_out_already
     flash[:notice] = check_out_register if flash[:notice].nil?
-    render 'pages/home'
+    redirect_to root_path
   end
 
   def first_check_in_or_check_out_already

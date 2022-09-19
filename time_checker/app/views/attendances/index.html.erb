@@ -21,8 +21,6 @@
         <td><%= attendance.check_out %></td>
         <td><%= attendance.store_id %></td>
         <td><%= link_to 'Show', attendance_path(attendance.id), class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Edit', edit_attendance_path(attendance.id), class: 'btn btn-success' %></td>
-        <td><%= link_to 'Delete', attendance_path(attendance), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
     </tr>
     <% end %>
   </tbody>
