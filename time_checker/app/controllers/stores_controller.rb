@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
-  def show
-    @store = Store.find(params[:id])
-  end
+  before_action :set_store, only: %i[show edit update destroy]
+
+  def show; end
 
   def index
     @stores = Store.all
@@ -12,7 +12,7 @@ class StoresController < ApplicationController
   end
 
   def create
-    @store = Store.new(params.require(:store).permit(:name, :address))
+    @store = Store.new(store_params)
     if @store.save
       redirect_to @store
     else
@@ -20,12 +20,10 @@ class StoresController < ApplicationController
     end
   end
 
-  def edit
-    @store = Store.find(params[:id])
-  end
+  def edit; end
+
   def update
-    @store = Store.find(params[:id])
-    if @store.update(params.require(:store).permit(:name, :address))
+    if @store.update(store_params)
       redirect_to @store
     else
       render 'edit'
@@ -33,8 +31,17 @@ class StoresController < ApplicationController
   end
 
   def destroy
-    @store = Store.find(params[:id])
     @store.destroy
-      redirect_to stores_path
+    redirect_to stores_path
+  end
+
+  private
+
+  def set_store
+    @store = Store.find(params[:id])
+  end
+
+  def store_params
+    params.require(:store).permit(:name, :address)
   end
 end

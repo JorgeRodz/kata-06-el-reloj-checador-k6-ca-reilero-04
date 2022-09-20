@@ -1,5 +1,9 @@
 <h1 class="my-2">Attendance Index</h1>
 
+<p>
+  <%= link_to 'Add new attendance', new_attendance_path, class: 'btn btn-primary m-3' %>
+</p>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -16,6 +20,7 @@
         <td><%= attendance.check_in %></td>
         <td><%= attendance.check_out %></td>
         <td><%= attendance.store_id %></td>
+        <td><%= link_to 'Show', attendance_path(attendance.id), class: 'btn btn-primary' %></td>
     </tr>
     <% end %>
   </tbody>
