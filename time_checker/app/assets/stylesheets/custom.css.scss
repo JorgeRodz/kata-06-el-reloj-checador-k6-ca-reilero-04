@@ -8,11 +8,24 @@ body {
 
 // --------------- application.html.erb --------------
 // ----- navbar -----
+.navbar {
+  margin-bottom: 50px;
+}
 .custom_margin {
   margin-right: 13px;
 }
 .nav_h1 {
   color: #e5e5d5;
+}
+
+// ----- custom flash msg -----
+.custom_flash_msg {
+  margin-top: -50px;
+}
+
+// ----- yield -----
+.yield_container {
+  flex-grow: 1;
 }
 
 // ----- footer -----
@@ -29,4 +42,10 @@ body {
     gap: 5px;
     margin: 0;
   }
+}
+
+// --------------- custom styles --------------
+.custom_center_element {
+  width: 50%;
+  margin: 0 auto;
 }

@@ -2,7 +2,7 @@
 
 # Controller for Attendances
 class AttendancesController < ApplicationController
-  before_action :require_admin
+  before_action :require_admin, except: [:create]
   before_action :set_variables, only: [:create]
 
   def show
