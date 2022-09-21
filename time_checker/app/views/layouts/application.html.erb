@@ -14,8 +14,16 @@
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid custom_margin">
         <a href="/"><%= image_tag("foo-corp_logo_white.png", size: "90x84", alt: "Edit Entry") %></a>
-        <h1 class="nav_h1">Time checker</h1>
-        <button type="button" class="btn btn-success">Admin</button>
+      <% if logged_in? %>
+        <h1 class="nav_h1">👨‍💻 Admin hub </h1>
+      <% else %>
+          <h1 class="nav_h1">🕗️ Time Checker </h1>
+      <% end %>
+      <% if logged_in? %>
+        <%= link_to 'Log out' , logout_path, method: :delete,class: 'btn btn-warning' %>
+      <% else %>
+        <%= link_to 'Admin' , login_path, class: 'btn btn-success' %>
+      <% end %>
       </div>
     </nav>
     <%= render 'layouts/flash_msgs' %>
