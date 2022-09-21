@@ -2,6 +2,7 @@
 
 # Controller for Attendances
 class AttendancesController < ApplicationController
+  before_action :require_admin, except: [:create]
   before_action :set_variables, only: [:create]
 
   def show
@@ -41,7 +42,10 @@ class AttendancesController < ApplicationController
   def employee_nil_or_wrong_private_number
     return 'Employee not found' if @employee.nil? || @employee.working == false
 
-    'Wrong private number' if @employee.private_number != params[:attendance][:private_number].to_i
+    if @employee.private_number != params[:attendance][:private_number].to_i
+      'Wrong priva
+      te number'
+    end
   end
 
   # --------------- Check-in ---------------

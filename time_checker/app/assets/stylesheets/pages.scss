@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@import "./fonts.scss";
+@import './fonts.scss';
 
-@import "./mixins";
+@import './mixins';
 // --------------- Pages --------------
 // ----- home -----
 .home_main {
@@ -43,6 +43,7 @@
   border-radius: 10px;
   padding: 10px;
   position: relative;
+  margin-bottom: 70px;
 
   .date {
     bottom: 15px;
