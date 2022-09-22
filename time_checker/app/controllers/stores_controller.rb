@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   before_action :require_admin
-  before_action :set_store, only: %i[show edit update destroy]
+  before_action :set_store, only: %i[show edit update destroy reports reports_att_by_day reports_att_by_day_date]
 
   def show; end
 
@@ -36,6 +36,15 @@ class StoresController < ApplicationController
     redirect_to stores_path
   end
 
+  def reports; end
+
+  def reports_att_by_day; end
+
+  def reports_att_by_day_date
+    date = params[:check_out].to_date
+    date ? @reports = Attendance.where(check_out: date.all_day) : report_empty
+  end
+
   private
 
   def set_store
@@ -44,5 +53,10 @@ class StoresController < ApplicationController
 
   def store_params
     params.require(:store).permit(:name, :address)
+  end
+
+  def report_empty
+    flash[:notice] = 'Please select a date'
+    redirect_to store_reports_att_by_day_path
   end
 end

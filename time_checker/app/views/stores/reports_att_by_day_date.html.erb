@@ -1,0 +1,20 @@
+<h1><%= @store.name %> - Reports here</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Empoye id</th>
+      <th scope="col">Check_in</th>
+      <th scope="col">Check_out</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @reports.each do |report| %>
+        <th scope="row"><%= report.employee_id %></th>
+        <td><%= report.check_in %></td>
+        <td><%= report.check_out %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
