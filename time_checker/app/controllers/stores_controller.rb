@@ -1,6 +1,7 @@
 class StoresController < ApplicationController
   before_action :require_admin
-  before_action :set_store, only: %i[show edit update destroy reports reports_att_by_day reports_att_by_day_date]
+  before_action :set_store, only: %i[show edit update destroy reports reports_att_by_day reports_att_by_day_date reports_abs_by_month reports_abs_by_month_date]
+
 
   def show; end
 
@@ -43,6 +44,14 @@ class StoresController < ApplicationController
   def reports_att_by_day_date
     date = params[:check_out].to_date
     date ? @reports = Attendance.where(check_out: date.all_day) : report_empty
+  end
+
+  def reports_abs_by_month; end
+
+  def reports_abs_by_month_date
+    date = params[:check_out] + '-01'
+    date = date.to_date
+    date ? @reports = Attendance.where(check_out: date.all_month) : report_empty
   end
 
   private
