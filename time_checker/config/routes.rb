@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   resources :stores
   resources :employees
 
+  #Report routes
+  get '/reports/attendance_by_day', to: 'reports#attendance_by_day'
+  get '/reports/monthly_absence_employee', to: 'reports#monthly_absence_employee'
+  get '/reports/monthly_average_hours_emp', to: 'reports#monthly_average_hours_emp'
+
   # Session routes
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
