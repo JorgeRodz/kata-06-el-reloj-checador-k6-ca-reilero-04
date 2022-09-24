@@ -1,19 +1,24 @@
 <h1><%= @store.name %> - Reports here</h1>
+<h2><%= @working_days %> Working days </h2>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Employee id</th>
-      <th scope="col">Check_in</th>
-      <th scope="col">Check_out</th>
+      <th scope="col">Days work</th>
+      <th scope="col"> Working days</th>
+      <th scope="col">Days Attendaces</th>
+      <th scope="col"> % </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <% @reports.each do |report| %>
-        <th scope="row"><%= report.employee_id %></th>
-        <td><%= report.check_in %></td>
-        <td><%= report.check_out %></td>
+      <% @distinct.each do |attendance| %>
+        <th scope="row"><%= attendance.employee_id %></th>
+        <td><%=  @absences %></td>
+        <td><%= @working_days %></td>
+        <td><%= '0' %></td>
+        <td><%= '100%' %></td>
     </tr>
     <% end %>
   </tbody>

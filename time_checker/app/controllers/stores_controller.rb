@@ -51,7 +51,22 @@ class StoresController < ApplicationController
   def reports_abs_by_month_date
     date = params[:check_out] + '-01'
     date = date.to_date
+    start_day = date
+    end_day = date.end_of_month
+    @working_days = start_day.business_days_until(end_day)
     date ? @reports = Attendance.where(check_out: date.all_month) : report_empty
+    
+    @reports = @reports.distinct
+    @distinct = Attendance.select(:employee_id).distinct.where(check_out: date.all_month)
+    @absences = []
+    @distinct.each do |attendance|
+      p attendance.employee_id
+      abs = Attendance.where(check_out: date.all_month,employee_id: attendance.employee_id)
+      @absences.push(@working_days - abs.length)
+      
+    end
+  
+    
   end
 
   private
