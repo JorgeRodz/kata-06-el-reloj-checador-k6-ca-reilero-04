@@ -5,20 +5,21 @@
   <thead>
     <tr>
       <th scope="col">Employee id</th>
-      <th scope="col">Days work</th>
-      <th scope="col"> Working days</th>
-      <th scope="col">Days Attendaces</th>
-      <th scope="col"> % </th>
+      <th scope="col">Employee name</th>
+      <th scope="col">Absences</th>
+      <th scope="col">Absences Porcentage</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <% @distinct.each do |attendance| %>
-        <th scope="row"><%= attendance.employee_id %></th>
-        <td><%=  @absences %></td>
-        <td><%= @working_days %></td>
-        <td><%= '0' %></td>
-        <td><%= '100%' %></td>
+      <% @store_employees.each do |employee| %>
+        <% assistance = Attendance.where(employee_id: employee.id).where.not(check_out: nil).length %>
+        <% absences = @working_days - assistance %>
+        <% absences_percentage = (absences * 100) / @working_days %>
+        <th scope="row"><%= employee.id %></th>
+        <th scope="row"><%= "#{employee.first_name} #{employee.last_name}" %></th>
+        <th scope="row" class='center'><%= "#{ absences }" %></th>
+        <th scope="row"><%= "#{ absences_percentage }%" %></th>
     </tr>
     <% end %>
   </tbody>

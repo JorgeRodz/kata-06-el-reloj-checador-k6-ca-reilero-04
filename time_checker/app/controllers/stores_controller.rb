@@ -2,7 +2,6 @@ class StoresController < ApplicationController
   before_action :require_admin
   before_action :set_store, only: %i[show edit update destroy reports reports_att_by_day reports_att_by_day_date reports_abs_by_month reports_abs_by_month_date]
 
-
   def show; end
 
   def index
@@ -43,30 +42,23 @@ class StoresController < ApplicationController
 
   def reports_att_by_day_date
     date = params[:check_out].to_date
-    date ? @reports = Attendance.where(check_out: date.all_day) : report_empty
+    date ? @reports = Attendance.where(check_out: date.all_day) : report_empty(:attendance)
   end
 
   def reports_abs_by_month; end
 
   def reports_abs_by_month_date
-    date = params[:check_out] + '-01'
+    # byebug
+    return report_empty(:absence) if params[:month] == ''
+
+    date = "#{params[:month]}-01"
     date = date.to_date
     start_day = date
     end_day = date.end_of_month
     @working_days = start_day.business_days_until(end_day)
-    date ? @reports = Attendance.where(check_out: date.all_month) : report_empty
-    
-    @reports = @reports.distinct
-    @distinct = Attendance.select(:employee_id).distinct.where(check_out: date.all_month)
-    @absences = []
-    @distinct.each do |attendance|
-      p attendance.employee_id
-      abs = Attendance.where(check_out: date.all_month,employee_id: attendance.employee_id)
-      @absences.push(@working_days - abs.length)
-      
-    end
-  
-    
+    @store_employees = @store.employees
+    @attendance_by_month = Attendance.where(check_out: date.all_month)
+    # byebug
   end
 
   private
@@ -79,8 +71,10 @@ class StoresController < ApplicationController
     params.require(:store).permit(:name, :address)
   end
 
-  def report_empty
+  def report_empty(type)
     flash[:notice] = 'Please select a date'
-    redirect_to store_reports_att_by_day_path
+    return redirect_to store_reports_att_by_day_path if type == :attendance
+
+    redirect_to store_reports_abs_by_month_path if type == :absence
   end
 end
