@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   before_action :require_admin
-  before_action :set_store, only: %i[show edit update destroy reports reports_att_by_day reports_att_by_day_date reports_abs_by_month reports_abs_by_month_date]
+  before_action :set_store, only: %i[show edit update destroy reports reports_att_by_day reports_att_by_day_date reports_abs_by_month reports_abs_by_month_date reports_avg_time_by_month reports_avg_time_by_month_date]
 
   def show; end
 
@@ -48,7 +48,6 @@ class StoresController < ApplicationController
   def reports_abs_by_month; end
 
   def reports_abs_by_month_date
-    # byebug
     return report_empty(:absence) if params[:month] == ''
 
     date = "#{params[:month]}-01"
@@ -58,7 +57,20 @@ class StoresController < ApplicationController
     @working_days = start_day.business_days_until(end_day)
     @store_employees = @store.employees
     @attendance_by_month = Attendance.where(check_out: date.all_month)
-    # byebug
+  end
+
+  def reports_avg_time_by_month; end
+
+  def reports_avg_time_by_month_date
+    return report_empty(:average) if params[:month] == ''
+
+    date = "#{params[:month]}-01"
+    date = date.to_date
+    start_day = date
+    end_day = date.end_of_month
+    @working_days = start_day.business_days_until(end_day)
+    @store_employees = @store.employees
+    @attendance_by_month = Attendance.where(check_out: date.all_month)
   end
 
   private
@@ -75,6 +87,8 @@ class StoresController < ApplicationController
     flash[:notice] = 'Please select a date'
     return redirect_to store_reports_att_by_day_path if type == :attendance
 
-    redirect_to store_reports_abs_by_month_path if type == :absence
+    return redirect_to store_reports_abs_by_month_path if type == :absence
+
+    redirect_to store_reports_avg_time_by_month_path if type == :average
   end
 end

@@ -18,7 +18,7 @@
         <% absences_percentage = (absences * 100) / @working_days %>
         <th scope="row"><%= employee.id %></th>
         <th scope="row"><%= "#{employee.first_name} #{employee.last_name}" %></th>
-        <th scope="row" class='center'><%= "#{ absences }" %></th>
+        <th scope="row"><%= "#{ absences }" %></th>
         <th scope="row"><%= "#{ absences_percentage }%" %></th>
     </tr>
     <% end %>
