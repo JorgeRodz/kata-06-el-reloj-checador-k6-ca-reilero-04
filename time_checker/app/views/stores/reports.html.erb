@@ -1,0 +1,6 @@
+<h1 class="mb-5"><%= @store.name %>'s reports</h1>
+<div class="d-flex justify-content-evenly">
+    <%= link_to "Attendance by Day", store_reports_att_by_day_path(@store.id), class: 'btn btn-primary'  %>
+    <%= link_to "Average time employees checked in/out by month", store_reports_abs_by_month_path(@store.id), class: 'btn btn-primary'  %>
+    <%= link_to "Average hours employees worked by month", store_reports_avg_time_by_month_path(@store.id), class: 'btn btn-primary'  %>
+</div>
