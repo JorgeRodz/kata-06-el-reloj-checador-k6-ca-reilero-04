@@ -50,13 +50,7 @@ class StoresController < ApplicationController
   def reports_abs_by_month_date
     return report_empty(:absence) if params[:month] == ''
 
-    date = "#{params[:month]}-01"
-    date = date.to_date
-    start_day = date
-    end_day = date.end_of_month
-    @working_days = start_day.business_days_until(end_day)
-    @store_employees = @store.employees
-    @attendance_by_month = Attendance.where(check_out: date.all_month)
+    set_variables_for_reports
   end
 
   def reports_avg_time_by_month; end
@@ -64,13 +58,7 @@ class StoresController < ApplicationController
   def reports_avg_time_by_month_date
     return report_empty(:average) if params[:month] == ''
 
-    date = "#{params[:month]}-01"
-    date = date.to_date
-    start_day = date
-    end_day = date.end_of_month
-    @working_days = start_day.business_days_until(end_day)
-    @store_employees = @store.employees
-    @attendance_by_month = Attendance.where(check_out: date.all_month)
+    set_variables_for_reports
   end
 
   private
@@ -90,5 +78,14 @@ class StoresController < ApplicationController
     return redirect_to store_reports_abs_by_month_path if type == :absence
 
     redirect_to store_reports_avg_time_by_month_path if type == :average
+  end
+
+  def set_variables_for_reports
+    date = "#{params[:month]}-01".to_date
+    start_day = date
+    end_day = date.end_of_month
+    @working_days = start_day.business_days_until(end_day)
+    @store_employees = @store.employees
+    @attendance_by_month = Attendance.where(check_out: date.all_month)
   end
 end
