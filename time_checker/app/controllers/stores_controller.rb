@@ -72,7 +72,7 @@ class StoresController < ApplicationController
   end
 
   def report_empty(type)
-    flash[:notice] = 'Please select a date'
+    flash[:alert] = 'Please select a date'
     return redirect_to store_reports_att_by_day_path if type == :attendance
 
     return redirect_to store_reports_abs_by_month_path if type == :absence

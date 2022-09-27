@@ -15,14 +15,14 @@ class ApplicationController < ActionController::Base
   # helpers methods for views
   def require_admin
     unless logged_in?
-      flash[:danger] = 'You must be logged in as Admin to perform that action'
+      flash[:alert] = 'You must be logged in as Admin to perform that action'
       redirect_to login_path
     end
   end
 
   def require_logout
     if logged_in?
-      flash[:danger] = 'You must log out first'
+      flash[:alert] = 'You must log out first'
       redirect_to stores_path
     end
   end
