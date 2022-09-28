@@ -11,15 +11,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <% @reports.each do |report| %>
+    <% @reports.each do |report| %>
+      <tr>
         <th scope="row"><%= report.employee_id %></th>
         <th scope="row"><%= Employee.find(report.employee_id).first_name + ' ' + Employee.find(report.employee_id).last_name %></th>
         <td><%= report.check_in %></td>
         <td><%= report.check_out %></td>
         <td><%= link_to 'Show', employee_path(Employee.find(report.employee_id)), class: 'btn btn-primary' %></td>
-    </tr>
-      <% end %>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 <p>

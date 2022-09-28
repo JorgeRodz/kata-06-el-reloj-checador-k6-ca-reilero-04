@@ -11,8 +11,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <% @store_employees.each do |employee| %>
+    <% @store_employees.each do |employee| %>
+      <tr>
         <% assistance = Attendance.where(employee_id: employee.id).where.not(check_out: nil).length %>
         <% absences = @working_days - assistance %>
         <% absences_percentage = (absences * 100) / @working_days %>
@@ -20,7 +20,7 @@
         <th scope="row"><%= "#{employee.first_name} #{employee.last_name}" %></th>
         <th scope="row"><%= "#{ absences }" %></th>
         <th scope="row"><%= "#{ absences_percentage }%" %></th>
-    </tr>
+      </tr>
     <% end %>
   </tbody>
 </table>

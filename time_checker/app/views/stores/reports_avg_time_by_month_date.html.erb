@@ -12,8 +12,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <% @store_employees.each do |employee| %>
+    <% @store_employees.each do |employee| %>
+      <tr>
         <% assistance = Attendance.where(employee_id: employee.id).where.not(check_out: nil) %>
         <% total_hours= 0 %>
         <% assistance.each do |assist| %>
@@ -28,7 +28,7 @@
         <th scope="row"><%= (average_hours/60/60).truncate(3) %></th>
         <th scope="row"><%= (total_hours/60/60).truncate(3) %></th>
         <th scope="row"><%= laboral_hours %></th>
-    </tr>
+      </tr>
     <% end %>
   </tbody>
 </table>
