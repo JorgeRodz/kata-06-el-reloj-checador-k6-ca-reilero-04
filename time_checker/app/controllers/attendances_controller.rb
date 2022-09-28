@@ -50,8 +50,8 @@ class AttendancesController < ApplicationController
 
   # --------------- Check-in ---------------
   def check_in
-    flash[:notice] = employee_nil_or_wrong_private_number || check_in_already
-    flash[:notice] = check_in_register if flash[:notice].nil?
+    flash[:alert] = employee_nil_or_wrong_private_number || check_in_already
+    flash[:notice] = check_in_register if flash[:alert].nil?
     redirect_to root_path
   end
 
@@ -65,8 +65,8 @@ class AttendancesController < ApplicationController
 
   # --------------- Check-out ---------------
   def checkout
-    flash[:notice] = employee_nil_or_wrong_private_number || first_check_in_or_check_out_already
-    flash[:notice] = check_out_register if flash[:notice].nil?
+    flash[:alert] = employee_nil_or_wrong_private_number || first_check_in_or_check_out_already
+    flash[:notice] = check_out_register if flash[:alert].nil?
     redirect_to root_path
   end
 
