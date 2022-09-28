@@ -15,8 +15,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <% @stores.each do |store| %>
+        <% @stores.each do |store| %>
+          <tr>
             <th scope="row"><%= store.id %></th>
             <td><%= store.name %></td>
             <td><%= store.address %></td>
@@ -24,8 +24,8 @@
             <td><%= link_to 'Edit', edit_store_path(store.id), class: 'btn btn-success' %></td>
             <td><%= link_to 'Reports', store_reports_path(store.id), class: 'btn btn-info' %></td>
             <td><%= link_to 'Delete', store_path(store), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
-        </tr>
-          <% end %>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
