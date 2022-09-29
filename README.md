@@ -1,3 +1,4 @@
+![Rubycritic Score](badges/rubycritic_badged_score.svg)
 ![BrightCoders Logo](img/logo-bc.png)
 
 # Reloj Checador App
@@ -18,7 +19,7 @@ Foo Corp needs a system to control their employees attendance to their offices, 
 
 The attendance web app must meet the following reuqirements:
 
-- [ ] __Milestone__ Project setup 
+- [ ] __Milestone__ Project setup
 
 - Admin
   - [ ] __Milestone__ Admin portal protected with basic auth
@@ -59,7 +60,7 @@ The attendance web app must meet the following reuqirements:
 - Framework para pruebas [Rspec](https://rspec.info/) ó [Minitest](https://github.com/seattlerb/minitest)
 
 ## Entregable
-- Código fuente en Github 
+- Código fuente en Github
   - Debe incluir README con información sobre como configurar el proyecto
   - Los commits de Git deben ser significativos
 - Demo de la App correndo en heroku o similar
