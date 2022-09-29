@@ -36,6 +36,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'awesome_print'
 gem 'business_time'
 gem 'faker', '2.23.0'
+gem 'rake'
+gem 'rubycritic', require: false
+gem 'rubycritic-small-badge', require: false
+gem 'sandi_meter'
 #--------------- Gems added ---------------
 
 group :development, :test do

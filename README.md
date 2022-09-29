@@ -1,3 +1,4 @@
+![Rubycritic Score](badges/rubycritic_badge_score.svg)
 ![BrightCoders Logo](img/logo-bc.png)
 
 # Reloj Checador App
@@ -18,7 +19,7 @@ Foo Corp needs a system to control their employees attendance to their offices, 
 
 The attendance web app must meet the following reuqirements:
 
-- [ ] __Milestone__ Project setup 
+- [ ] __Milestone__ Project setup
 
 - Admin
   - [ ] __Milestone__ Admin portal protected with basic auth
@@ -59,14 +60,21 @@ The attendance web app must meet the following reuqirements:
 - Framework para pruebas [Rspec](https://rspec.info/) ó [Minitest](https://github.com/seattlerb/minitest)
 
 ## Entregable
-- Código fuente en Github 
+- Código fuente en Github
   - Debe incluir README con información sobre como configurar el proyecto
   - Los commits de Git deben ser significativos
 - Demo de la App correndo en heroku o similar
 - Libertad para utilizar cualquier diseño, imágenes, etc, que considere necesarios y apropiados
 
 ## Setup
-En [este elnace](setup/README.md) se describen los pasos necesarios para ejecutar/probar este proyecto, así como los integrantes de este equipo
+### Configuracion en local
+  - Clonar el repositorio y hacer un `bundle install` para instalar las gemas necesarias, en algunos casos es necesario instalar webpacker usando yarn
+  - Crear el archivo config/database.yml para crear nuestras bases de datos en local, preferentemente usando Postgresql
+  - Una vez configurado el archivo anterior inicializar las bases de datos con el comando `rails db:setup`
+  - Correr el comando de `rails server` para ver la app corriendo en local
+
+### App corriendo fly.io
+[App corriendo en fly.io](https://kata06-reloj-checador.fly.dev/)
 
 ## Enlaces
 [Encuentra aquí una lista completa de recursos de ayuda](https://brightcoder.gitbook.io/handbook/ruby-on-rails)
