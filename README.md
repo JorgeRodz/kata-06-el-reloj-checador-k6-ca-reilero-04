@@ -1,22 +1,24 @@
 # 🕥 Time checker app ✍️
 
-- This kata was created on the [**_BrightCoders Ruby on Rails bootcamp_**](http://www.brightcoders.com/).
-- This is a fork from the repot [**_Time checker app_**](https://github.com/BC-MAY-21-ROR/kata-06-el-reloj-checador-k6-ca-reilero-04)
+> This kata was created on the [**_BrightCoders Ruby on Rails bootcamp_**](http://www.brightcoders.com/).
+>
+> This is a fork from the repot [**_Time checker app_**](https://github.com/BC-MAY-21-ROR/kata-06-el-reloj-checador-k6-ca-reilero-04)
 
-Here screenshots of the app
+![image](https://user-images.githubusercontent.com/13999498/215313860-f939b428-4f81-4783-a2a4-6a1f431e67b3.png)
+
 
 # Heroku deploy
 
-- App up and running on Heroku 👉 [**_Time checker app_**](https://https://bcaug22-railero-4-time-checker.herokuapp.com/)
+- App up and running on Heroku 👉 [**_Time checker app_**](https://bcaug22-railero-4-time-checker.herokuapp.com/ "Deploy")
 
 # Interact with app
 
 - This app was made just for learning purposes, so you can interact with it using the following credentials:
 
   - 🧑🏻‍💻 Admin:
-    - email: edmin@gmail.com
-    - password: asdfjkl
+    - email: _edmin@gmail.com_
+    - password: _asdfjkl_
 
   With this credentials you can use the full CRUD actions, so please be conscious when using the app.
 
-  🕵️‍♀️ **_We are monitoring the app in case of some irregular behavior._** 👀
+> 🕵️‍♀️ **_We are monitoring the app in case of some irregular behavior._** 👀
