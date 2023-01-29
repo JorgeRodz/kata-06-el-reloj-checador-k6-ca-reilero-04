@@ -1,6 +1,6 @@
 # 🕥 Time checker app ✍️
 
-> This kata was created on the [**_BrightCoders Ruby on Rails bootcamp_**](http://www.brightcoders.com/).
+> This kata was created at the [**_BrightCoders Ruby on Rails bootcamp_**](http://www.brightcoders.com/).
 >
 > This is a fork of the repository 👉 [**_Time checker app_**](https://github.com/BC-MAY-21-ROR/kata-06-el-reloj-checador-k6-ca-reilero-04)
 
@@ -19,6 +19,6 @@
     - email: _edmin@gmail.com_
     - password: _asdfjkl;_
 
-  With this credentials you can use the full CRUD actions, so please be conscious when using the app.
+  With these credentials you can use the full CRUD actions, so please be conscious when using the app.
 
 > 🕵️‍♀️ **_We are monitoring the app in case of some irregular behavior._** 👀
