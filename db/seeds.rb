@@ -10,6 +10,10 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # We have to create the 'Stores' first in order to apply the relation between tables
+
+# Create a default admin user
+Admin.create(email: 'admin@gmail.com', first_name: 'Elon', last_name: 'Musk', password: 'asdfjkl;')
+
 # Create Stores
 5.times do |i|
   puts "Creating store #{i}"
